@@ -15,7 +15,7 @@ public class CourseJdbcRepository {
             """
             insert into course (id, name, author) values (1,'Learn Spring', 'GPT');
             """;
-    public void insert(Course c) { //can be any method name
+    public void insert() { //can be any method name
         springJdbcTemplate.update(insert_Query);
     }
 }
