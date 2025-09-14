@@ -18,4 +18,12 @@ public class CourseJdbcRepository {
     public void insert(Course c) { //can be any method name
         springJdbcTemplate.update(insert_Query, c.getId(), c.getName(), c.getAuthor());
     }
+
+    private static String delete_Query =
+            """
+            delete from course where id = ?;
+            """;
+    public void delete(Course c) { //can be any method name
+        springJdbcTemplate.update(delete_Query, c.getId());
+    }
 }
