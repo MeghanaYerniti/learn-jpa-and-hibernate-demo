@@ -1,5 +1,7 @@
 package com.example.learn_jpa_and_hibernate_demo.course.jdbc;
 
+import com.example.learn_jpa_and_hibernate_demo.course.Course;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

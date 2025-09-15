@@ -1,8 +1,18 @@
-package com.example.learn_jpa_and_hibernate_demo.course.jdbc;
+package com.example.learn_jpa_and_hibernate_demo.course;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Course {
+
+    @Id
     private Long id;
+    //@Column(name="name")
+    // @Column we can use this if col & var name are differ in code and DB
     private String name;
+    //@Column(name="author")
     private String author;
 
     public Course() {
