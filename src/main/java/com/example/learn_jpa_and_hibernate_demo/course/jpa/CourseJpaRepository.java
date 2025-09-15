@@ -19,13 +19,13 @@ public class CourseJpaRepository {
         // merge() => insertion
     }
 
-    public void delete(Long id) {
-        entityManager.remove(entityManager.find(Course.class, id));
-        // remove() => delete
-    }
-
     public Course select(Long id) {
         return entityManager.find(Course.class, id);
         // find() => select statement
+    }
+
+    public void delete(Long id) {
+        entityManager.remove(entityManager.find(Course.class, id));
+        // remove() => delete
     }
 }
