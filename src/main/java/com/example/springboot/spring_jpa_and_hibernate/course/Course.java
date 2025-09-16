@@ -1,6 +1,5 @@
-package com.example.learn_jpa_and_hibernate_demo.course;
+package com.example.springboot.spring_jpa_and_hibernate.course;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 

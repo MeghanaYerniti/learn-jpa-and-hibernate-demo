@@ -1,4 +1,4 @@
-package com.example.learn_jpa_and_hibernate_demo;
+package com.example.springboot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

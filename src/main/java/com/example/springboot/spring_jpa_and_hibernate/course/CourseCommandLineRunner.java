@@ -1,8 +1,6 @@
-package com.example.learn_jpa_and_hibernate_demo.course;
+package com.example.springboot.spring_jpa_and_hibernate.course;
 
-import com.example.learn_jpa_and_hibernate_demo.course.jdbc.CourseJdbcRepository;
-import com.example.learn_jpa_and_hibernate_demo.course.jpa.CourseJpaRepository;
-import com.example.learn_jpa_and_hibernate_demo.course.springdatajpa.CourseSpringDataJpaRepository;
+import com.example.springboot.spring_jpa_and_hibernate.course.springdatajpa.CourseSpringDataJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -29,3 +27,5 @@ public class CourseCommandLineRunner implements CommandLineRunner {
         System.out.println(repository.findByAuthor("GPT"));
     }
 }
+
+// url : http://localhost:8080/h2-console

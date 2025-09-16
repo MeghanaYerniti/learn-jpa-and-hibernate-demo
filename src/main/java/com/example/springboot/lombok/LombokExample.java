@@ -1,4 +1,4 @@
-package com.example.learn_jpa_and_hibernate_demo.lombok;
+package com.example.springboot.lombok;
 
 import lombok.Data;
 

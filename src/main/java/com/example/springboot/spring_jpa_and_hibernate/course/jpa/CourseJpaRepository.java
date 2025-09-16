@@ -1,6 +1,6 @@
-package com.example.learn_jpa_and_hibernate_demo.course.jpa;
+package com.example.springboot.spring_jpa_and_hibernate.course.jpa;
 
-import com.example.learn_jpa_and_hibernate_demo.course.Course;
+import com.example.springboot.spring_jpa_and_hibernate.course.Course;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
