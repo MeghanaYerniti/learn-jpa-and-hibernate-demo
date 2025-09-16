@@ -26,5 +26,6 @@ public class CourseCommandLineRunner implements CommandLineRunner {
         repository.save(new Course(3, "Learn Spring Boot", "Copilot"));
         repository.deleteById(2L);
         System.out.println(repository.findById(3L));
+        System.out.println(repository.findByAuthor("GPT"));
     }
 }
