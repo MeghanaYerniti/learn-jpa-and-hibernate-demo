@@ -1,6 +1,7 @@
-package com.example.springboot.spring_jpa_and_hibernate.course;
+package com.example.springboot.service;
 
-import com.example.springboot.spring_jpa_and_hibernate.course.springdatajpa.CourseSpringDataJpaRepository;
+import com.example.springboot.entity.Course;
+import com.example.springboot.repository.CourseSpringDataJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

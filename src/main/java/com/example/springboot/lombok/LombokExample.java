@@ -20,6 +20,4 @@ public @Data class LombokExample {
     private String tech;
     // to access var outside cls we use setters and getters
 
-
-
 }

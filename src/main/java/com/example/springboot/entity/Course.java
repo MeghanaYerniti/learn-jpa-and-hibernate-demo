@@ -1,4 +1,4 @@
-package com.example.springboot.spring_jpa_and_hibernate.course;
+package com.example.springboot.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

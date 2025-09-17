@@ -1,6 +1,6 @@
-package com.example.springboot.spring_jpa_and_hibernate.course.springdatajpa;
+package com.example.springboot.repository;
 
-import com.example.springboot.spring_jpa_and_hibernate.course.Course;
+import com.example.springboot.entity.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
