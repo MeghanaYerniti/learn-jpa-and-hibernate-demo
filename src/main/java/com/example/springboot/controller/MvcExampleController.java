@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MvcExampleController {
 
     // no need to have same name for url and html file
-    @GetMapping("/hello")// when we open http://localhost:8080/home, this method executes
+    @GetMapping("/hello")// when we open http://localhost:8080/hello, this method executes
     @ResponseBody
     public String homePage() {
         return "Spring MVC";
