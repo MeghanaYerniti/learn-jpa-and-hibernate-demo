@@ -1,6 +1,7 @@
 package com.example.springboot.controller;
 
 import com.example.springboot.entity.UserBean;
+import com.example.springboot.exception.UserNotFoundException;
 import com.example.springboot.repository.UserDaoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +25,11 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     public UserBean findId(@PathVariable Integer id) {
-        return userDaoService.findOne(id);
+        UserBean foundUser =userDaoService.findOne(id);
+        if(foundUser == null){
+            throw new UserNotFoundException("id:"+id);
+        }
+        return foundUser;
     }
 
 //    @PostMapping("/users")
