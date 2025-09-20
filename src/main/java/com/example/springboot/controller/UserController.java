@@ -23,14 +23,14 @@ public class UserController {
         return userDaoService.findAll();
     }
 
-    @GetMapping("/users/{id}")
-    public UserBean findId(@PathVariable Integer id) {
-        UserBean foundUser =userDaoService.findOne(id);
-        if(foundUser == null){
-            throw new UserNotFoundException("id:"+id);
-        }
-        return foundUser;
-    }
+//    @GetMapping("/users/{id}")
+//    public UserBean findId(@PathVariable Integer id) {
+//        UserBean foundUser =userDaoService.findOne(id);
+//        if(foundUser == null){
+//            throw new UserNotFoundException("id:"+id);
+//        }
+//        return foundUser;
+//    }
 
 //    @PostMapping("/users")
 //    public void createUser(@RequestBody UserBean userBean) {
@@ -50,6 +50,11 @@ public class UserController {
         UserBean savedUser = userDaoService.addUser(userBean);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/users/{id}").buildAndExpand(savedUser.getId()).toUri();
         return ResponseEntity.created(location).build(); // send 201 as response
+    }
+
+    @DeleteMapping("/users/{id}")
+    public void deleteById(@PathVariable Integer id) {
+        userDaoService.deleteById(id);
     }
 
 }

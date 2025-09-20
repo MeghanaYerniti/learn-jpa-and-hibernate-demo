@@ -42,4 +42,11 @@ public class UserDaoService {
         return user;
     }
 
+    public void deleteById(int id) {
+        Predicate<? super UserBean> predicate = user -> {
+            return user.getId().equals(id);
+        };
+        users.remove(predicate);
+    }
+
 }
