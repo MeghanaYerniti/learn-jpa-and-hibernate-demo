@@ -43,10 +43,12 @@ public class UserDaoService {
     }
 
     public void deleteById(int id) {
+        //predicate contains True / False
         Predicate<? super UserBean> predicate = user -> {
             return user.getId().equals(id);
         };
-        users.remove(predicate);
+        // users.removeIf(predicate); // checks true or false
+        users.removeIf(predicate); // checks the UserBean if ele is same or not
     }
 
 }
