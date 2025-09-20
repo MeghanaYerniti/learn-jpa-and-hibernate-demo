@@ -50,5 +50,4 @@ public class UserDaoService {
         // users.removeIf(predicate); // checks true or false
         users.removeIf(predicate); // checks the UserBean if ele is same or not
     }
-
 }
