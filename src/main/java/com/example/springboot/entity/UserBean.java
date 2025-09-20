@@ -17,7 +17,7 @@ public class UserBean {
 
     private Integer id;
 
-    @Size(min = 2, max = 20)
+    @Size(min = 2, max = 20, message = "name should be at least 2 to 20 characters.")
     private String name;
     @Past
     private LocalDate bDay;
