@@ -2,13 +2,11 @@ package com.example.springboot.repository;
 
 
 import com.example.springboot.entity.UserBean;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Predicate;
 
 @Component

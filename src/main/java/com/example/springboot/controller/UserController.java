@@ -6,6 +6,7 @@ import com.example.springboot.repository.UserDaoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import jakarta.validation.Valid;
 
 import java.net.URI;
 import java.util.List;
@@ -46,10 +47,10 @@ public class UserController {
 
     // returning url and Id
     @PostMapping("/users")
-    public ResponseEntity<Object> createUser(@RequestBody UserBean userBean) {
+    public ResponseEntity<Object> createUser(@Valid @RequestBody UserBean userBean) { // adding validation constraints at bean
         UserBean savedUser = userDaoService.addUser(userBean);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/users/{id}").buildAndExpand(savedUser.getId()).toUri();
-        return ResponseEntity.created(location).build(); // send 201 as response
+        return ResponseEntity.created(location).build(); // sends where created and id
     }
 
     @DeleteMapping("/users/{id}")
