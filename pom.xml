@@ -39,6 +39,17 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
+        <!--HAL-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-rest-hal-explorer</artifactId>
+        </dependency>
+        <!-- Actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- add "management.endpoints.web.exposure.include=*" in application.prope.. for all apis       -->
 <!--         HATEOAS-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
