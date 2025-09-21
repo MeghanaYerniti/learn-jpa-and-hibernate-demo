@@ -1,0 +1,1 @@
+insert into user_details(b_day, name) values(current_date(), 'Abhi');
