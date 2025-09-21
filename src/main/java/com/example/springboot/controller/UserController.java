@@ -3,6 +3,11 @@ package com.example.springboot.controller;
 import com.example.springboot.entity.UserBean;
 import com.example.springboot.exception.UserNotFoundException;
 import com.example.springboot.repository.UserDaoService;
+import org.springframework.hateoas.EntityModel;
+//import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
+
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -24,14 +29,17 @@ public class UserController {
         return userDaoService.findAll();
     }
 
-//    @GetMapping("/users/{id}")
-//    public UserBean findId(@PathVariable Integer id) {
-//        UserBean foundUser =userDaoService.findOne(id);
-//        if(foundUser == null){
-//            throw new UserNotFoundException("id:"+id);
-//        }
-//        return foundUser;
-//    }
+    @GetMapping("/users/{id}")
+    public EntityModel<UserBean> findId(@PathVariable Integer id) {
+        UserBean foundUser =userDaoService.findOne(id);
+        if(foundUser == null){
+            throw new UserNotFoundException("id:"+id);
+        }
+        EntityModel<UserBean> entityModel = EntityModel.of(foundUser);
+        WebMvcLinkBuilder link = linkTo(methodOn(this.getClass()).allBeans());
+        entityModel.add(link.withRel("all-users"));
+        return entityModel;
+    }
 
 //    @PostMapping("/users")
 //    public void createUser(@RequestBody UserBean userBean) {
